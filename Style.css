@@ -1,0 +1,125 @@
+/* Grundlayout */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #4CAF50;
+  color: white;
+  padding: 0 1em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+/* Logo und Titel */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.wappen {
+  height: 60px;
+  width: auto;
+}
+
+.panorama img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 400px; /* optional: Höhe begrenzen */
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1em; /* Abstand zwischen Menüeinträgen */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hauptinhalt */
+main {
+  padding: 6em 2em 2em 2em; /* oben mehr Platz für den fixierten Header */
+}
+
+
+/* Footer */
+footer {
+  background: #eee;
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
+}
+
+/* Zitat-Stil */
+blockquote {
+  background: #f0f0f0;
+  border-left: 5px solid #4CAF50;
+  margin: 1em 0;
+  padding: 1em;
+  font-style: italic;
+}
+
+/* Galerie / Slideshow */
+.slideshow-container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
