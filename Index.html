@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dorfladen Zöschingen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="header-bar">
+    <div class="logo-title">
+      <img src="logo.png" alt="Dorfladen Logo" class="logo" />
+      <h1>Dorfladen Zöschingen</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#angebote">Angebote</a></li>
+        <li><a href="#kontakt">Kontakte</a></li>
+        <li><a href="#geschichte">Geschichte</a></li>
+        <li><a href="#termine">Termine</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+      </ul>
+    </nav>
+    <img src="wappen.png" alt="Gemeindewappen Zöschingen" class="wappen" />
+  </div>
+</header>
+
+<div class="panorama">
+  <img src="zoeschingen-panorama.jpg" alt="Panorama von Zöschingen" />
+</div>
+
+
+  <main>
+    <section id="ueber-uns">
+      <h2>Über unseren Dorfladen</h2>
+      <p>Hier steht eine kurze Beschreibung des Dorfladens.</p>
+    </section>
+
+    <section id="angebote">
+      <h2>Unsere Angebote</h2>
+      <ul>
+        <li>Frisches Obst und Gemüse</li>
+        <li>Regionale Produkte</li>
+        <li>Backwaren vom Bäcker</li>
+      </ul>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <p>Adresse, Telefonnummer, Öffnungszeiten</p>
+    </section>
+
+    <section id="geschichte">
+      <h2>Geschichte des Dorfladens Zöschingen</h2>
+      <p>Der Dorfladen Zöschingen wurde im Jahr 2003 gegründet – aus einer Notlage heraus, da die Nahversorgung im Ort gefährdet war. Die Idee, einen eigenen Dorfladen zu eröffnen, fand schnell großen Anklang bei den Bürgerinnen und Bürgern. Gemeinsam gründeten sie eine Genossenschaft und bauten in vielen ehrenamtlichen Stunden einen kleinen, aber gemütlichen Laden auf.</p>
+    </section>
+
+    <section id="termine">
+      <h2>Termine</h2>
+      <p>Hier werden die aktuellen Termine des Dorfes angezeigt.</p>
+    </section>
+
+<section id="galerie">
+  <h2>Galerie</h2>
+  <button id="galerieButton" onclick="toggleSlideshow()">Galerie starten</button>
+
+  <div class="slideshow-container" style="display: none;">
+    <div class="mySlides fade">
+      <img src="bild1.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <img src="bild2.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <img src="bild3.jpg" style="width:100%">
+    </div>
+  </div>
+
+  <div class="dots" style="display: none; text-align:center;">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dorfladen Zöschingen</p>
+  </footer>
+
+<script>
+  let slideIndex = 0;
+  let slideshowStarted = false;
+  let slideshowInterval;
+
+  function toggleSlideshow() {
+    const container = document.querySelector(".slideshow-container");
+    const dots = document.querySelector(".dots");
+    const button = document.getElementById("galerieButton");
+
+    if (!slideshowStarted) {
+      container.style.display = "block";
+      dots.style.display = "block";
+      button.textContent = "Galerie beenden";
+      slideshowStarted = true;
+      showSlides();
+    } else {
+      container.style.display = "none";
+      dots.style.display = "none";
+      button.textContent = "Galerie starten";
+      slideshowStarted = false;
+      clearTimeout(slideshowInterval);
+    }
+  }
+
+  function showSlides() {
+    if (!slideshowStarted) return;
+
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+
+    slideshowInterval = setTimeout(showSlides, 2000);
+  }
+</script>
+
+</body>
+</html>
