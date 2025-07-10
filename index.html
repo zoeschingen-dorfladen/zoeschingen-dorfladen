@@ -10,7 +10,7 @@
 <header>
   <div class="header-bar">
     <div class="logo-title">
-      <img src="logo.png" alt="Dorfladen Logo" class="logo" />
+      <img src="Logo/" alt="Dorfladen Logo" class="logo" />
       <h1>Dorfladen Zöschingen</h1>
     </div>
     <nav>
@@ -27,8 +27,11 @@
   </div>
 </header>
 
-<div class="panorama">
-  <img src="zoeschingen-panorama.jpg" alt="Panorama von Zöschingen" />
+
+<div class="panorama-slideshow">
+  <img class="panorama-slide" src="zoeschingen-panoramaA.jpg" alt="Panorama 1" style="display: block;">
+  <img class="panorama-slide" src="zoeschingen-panoramaB.jpg" alt="Panorama 2" style="display: none;">
+  <img class="panorama-slide" src="zoeschingen-panoramaC.jpg" alt="Panorama 3" style="display: none;">
 </div>
 
   <main>
@@ -95,6 +98,19 @@
   let slideshowStarted = false;
   let slideshowInterval;
 
+  let panoramaIndex = 0;
+
+  function showPanoramaSlides() {
+    const panoramaSlides = document.getElementsByClassName("panorama-slide");
+    for (let i = 0; i < panoramaSlides.length; i++) {
+      panoramaSlides[i].style.display = "none";
+    }
+    panoramaIndex++;
+    if (panoramaIndex > panoramaSlides.length) { panoramaIndex = 1; }
+    panoramaSlides[panoramaIndex - 1].style.display = "block";
+    setTimeout(showPanoramaSlides, 5000); // 5 Sekunden
+  }
+
   function toggleSlideshow() {
     const container = document.querySelector(".slideshow-container");
     const dots = document.querySelector(".dots");
@@ -137,7 +153,11 @@
 
     slideshowInterval = setTimeout(showSlides, 2000);
   }
+
+  // Starte Panorama-Slideshow, wenn Seite vollständig geladen ist
+  window.addEventListener("load", showPanoramaSlides);
 </script>
+
 
 </body>
 </html>

@@ -34,7 +34,7 @@ header {
 }
 
 .logo {
-  height: 60px;
+  height: 100px;
   width: auto;
 }
 
@@ -50,6 +50,24 @@ header {
   object-fit: cover;
   max-height: 400px; /* optional: Höhe begrenzen */
 }
+
+
+.panorama-slideshow {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.panorama-slide {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease-in-out;
+}
+
 
 /* Navigation */
 nav ul {
