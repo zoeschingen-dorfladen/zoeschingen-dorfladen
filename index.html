@@ -4,112 +4,410 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dorfladen Zöschingen</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .fixed-top {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .header-bar {
+      background-color: #f2f2f2;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .green-bar {
+      height: 6px;
+      background-color: #2e8b57;
+      width: 100%;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 80px;
+      margin-right: 10px;
+    }
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1em; /* Abstand zwischen Menüeinträgen */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: darkgreen;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+    .wappen {
+      height: 80px;
+    }
+
+    .panorama-slideshow {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      margin-top: 100px; /* Platz für fixierten Header + green-bar */
+    }
+
+    .panorama-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .panorama-slide.active {
+      display: block;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+.lieferanten-uebersicht ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.lieferanten-uebersicht li a {
+  text-decoration: none;
+  color: #2e8b57;
+  font-weight: bold;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #ccc;
+  margin: 40px 0;
+}
+[id]::before {
+  content: "";
+  display: block;
+  height: 120px; /* Höhe des fixierten Headers + grüner Balken */
+  margin-top: -100px;
+  visibility: hidden;
+}
+.angebot-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.angebot-bild {
+  max-width: 500px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+    footer {
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
-<header>
+
+<div class="fixed-top">
   <div class="header-bar">
     <div class="logo-title">
-      <img src="Logo/" alt="Dorfladen Logo" class="logo" />
-      <h1>Dorfladen Zöschingen</h1>
+      <img src="Logo/LogoC.jpg" alt="Dorfladen Logo" class="logo" />
+      <h1></h1>
     </div>
     <nav>
       <ul>
         <li><a href="#ueber-uns">Über uns</a></li>
         <li><a href="#angebote">Angebote</a></li>
-        <li><a href="#kontakt">Kontakte</a></li>
-        <li><a href="#geschichte">Geschichte</a></li>
+        <li><a href="#lieferanten">Lieferanten</a></li>
         <li><a href="#termine">Termine</a></li>
+        <li><a href="#historie">Historie</a></li>
         <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#kontakt">Kontakte</a></li>
       </ul>
     </nav>
     <img src="wappen.png" alt="Gemeindewappen Zöschingen" class="wappen" />
   </div>
-</header>
-
-
-<div class="panorama-slideshow">
-  <img class="panorama-slide" src="zoeschingen-panoramaA.jpg" alt="Panorama 1" style="display: block;">
-  <img class="panorama-slide" src="zoeschingen-panoramaB.jpg" alt="Panorama 2" style="display: none;">
-  <img class="panorama-slide" src="zoeschingen-panoramaC.jpg" alt="Panorama 3" style="display: none;">
+  <div class="green-bar"></div>
 </div>
 
-  <main>
+<div class="panorama-slideshow">
+  <img class="panorama-slide active" src="zoeschingen-panoramaA.jpg" alt="Panorama 1">
+  <img class="panorama-slide" src="zoeschingen-panoramaB.jpg" alt="Panorama 2">
+  <img class="panorama-slide" src="zoeschingen-panoramaC.jpg" alt="Panorama 3">
+</div>
+
+<main>
+    <h1>Willkommen im Dorfladen Zöschingen</h1>
+    <section>
+        <p>Unser Dorfladen ist mehr als nur ein Geschäft – er ist ein lebendiger Mittelpunkt unserer Dorfgemeinschaft. Seit über 20 Jahren versorgen wir Zöschingen und Umgebung mit frischen Lebensmitteln, regionalen Produkten und allem, was man für den Alltag braucht.</p>
+    </section>
+
+  <div class="green-bar"></div>
     <section id="ueber-uns">
-      <h2>Über unseren Dorfladen</h2>
-      <p>Hier steht eine kurze Beschreibung des Dorfladens.</p>
-    </section>
+    <h2>Wofür unser Dorfladen steht</h2>
+    <ul>
+        <li><strong>Gemeinschaftsgefühl:</strong> Ein Treffpunkt für Jung und Alt, der das soziale Miteinander stärkt und Nachbarschaft erlebbar macht.</li>
+        <br>
+        <li><strong>Dorferneuerung:</strong> Jeder Einkauf unterstützt die Weiterentwicklung unseres Dorfes und trägt zur Belebung des Ortskerns bei.</li>
+        <br>        
+        <li><strong>Zukunftssicherung:</strong> Mit Ihrem Einkauf sichern Sie die langfristige Versorgung vor Ort – besonders wichtig für ältere Menschen und Familien ohne Auto.</li>
+        <br>        
+        <li><strong>Nachhaltigkeit:</strong> Kurze Wege bedeuten weniger Verkehr, weniger Emissionen und mehr Lebensqualität für alle.</li>
+        <br>        
+        <li><strong>Regionalität:</strong> Viele unserer Produkte stammen direkt aus der Region – frisch, hochwertig und mit Liebe produziert.</li>
+        <br>        
+        <li><strong>Stolz:</strong> Unser Dorfladen ist ein Vorbild für andere Gemeinden – ein Zeichen dafür, was wir gemeinsam erreichen können.</li>
+    </ul>    </section>
 
-    <section id="angebote">
-      <h2>Unsere Angebote</h2>
-      <ul>
-        <li>Frisches Obst und Gemüse</li>
-        <li>Regionale Produkte</li>
-        <li>Backwaren vom Bäcker</li>
-      </ul>
-    </section>
+  <div class="green-bar"></div>
+<section id="angebote">
+  <h2>Unsere Angebote</h2>
+<p>
+  Ob frisches Brot vom Bäcker, Obst und Gemüse aus der Region, eine große Auswahl an Wurst- und Fleischwaren aus unserer Frischetheke, Zeitschriften, Milchprodukte oder kleine Alltagshelfer – bei uns finden Sie alles, was Sie brauchen. Und das mit einem freundlichen Lächeln und persönlichem Service.
+</p>
+<h2>Unsere Angebote</h2>
+<ul>
+  <li>Wurst- und Fleischwaren aus unserer großen Frischetheke</li>
+  <li>Backwaren vom Bäcker</li>
+  <li>Frisches Obst und Gemüse</li>
+  <li>Regionale Produkte</li>
+  <li>Wir nehmen jederzeit telefonische Bestellungen an</li>
+  <li>Gutscheine können erworben werden</li>
+  <li>Geschenkkörbe werden individuell erstellt</li>
+  <li>Jeden Freitag nachmittags gibt es Kaffeekränzchen</li>
+  <li>Frühstück bei Voranmeldung</li>
+</ul>
+<hr>
 
-    <section id="kontakt">
-      <h2>Kontakt</h2>
-      <p>Adresse, Telefonnummer, Öffnungszeiten</p>
-    </section>
-
-    <section id="geschichte">
-      <h2>Geschichte des Dorfladens Zöschingen</h2>
-      <p>Der Dorfladen Zöschingen wurde im Jahr 2003 gegründet – aus einer Notlage heraus, da die Nahversorgung im Ort gefährdet war. Die Idee, einen eigenen Dorfladen zu eröffnen, fand schnell großen Anklang bei den Bürgerinnen und Bürgern. Gemeinsam gründeten sie eine Genossenschaft und bauten in vielen ehrenamtlichen Stunden einen kleinen, aber gemütlichen Laden auf.</p>
-    </section>
-
-    <section id="termine">
-      <h2>Termine</h2>
-      <p>Hier werden die aktuellen Termine des Dorfes angezeigt.</p>
-    </section>
-
-<section id="galerie">
-  <h2>Galerie</h2>
-  <button id="galerieButton" onclick="toggleSlideshow()">Galerie starten</button>
-
-  <div class="slideshow-container" style="display: none;">
-    <div class="mySlides fade">
-      <img src="bild1.jpg" style="width:100%">
-    </div>
-    <div class="mySlides fade">
-      <img src="bild2.jpg" style="width:100%">
-    </div>
-    <div class="mySlides fade">
-      <img src="bild3.jpg" style="width:100%">
-    </div>
+  <h3>🎁 Geschenkkörbe</h3>
+  <div class="angebot-block">
+    <img src="Geschenkkorp.jpg" alt="Geschenkkorb" class="angebot-bild">
+    <p>
+      Ob zum Geburtstag, Jubiläum oder einfach als liebevolle Aufmerksamkeit – unsere Geschenkkörbe werden individuell nach Ihren Wünschen zusammengestellt. Wählen Sie aus regionalen Spezialitäten, frischen Produkten und kleinen Überraschungen. Gerne beraten wir Sie persönlich im Laden.
+    </p>
   </div>
+<hr>
 
-  <div class="dots" style="display: none; text-align:center;">
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
+  <h3>🎫 Gutscheine</h3>
+  <div class="angebot-block">
+    <img src="gutschein.jpg" alt="Gutschein" class="angebot-bild">
+    <p>
+      Verschenken Sie Freude und Unterstützung für den Dorfladen! Unsere Gutscheine sind in beliebiger Höhe erhältlich und können für das gesamte Sortiment eingelöst werden. Ideal für Familie, Freunde oder als kleines Dankeschön.
+    </p>
+  </div>
+<hr>
+
+  <h3>☕ Frühstück auf Vorbestellung</h3>
+  <div class="angebot-block">
+    <img src="fruehstueckA.jpg" alt="FrühstückA" class="angebot-bild">
+    <img src="fruehstueckB.jpg" alt="FrühstückB" class="angebot-bild">
+    <p>
+      Starten Sie den Tag gemütlich bei uns im Dorfladen! Jeden Mittwoch und Samstag bieten wir ein liebevoll zubereitetes Frühstück mit frischen Brötchen, Aufschnitt, Käse, Marmelade, Kaffee und Saft. Bitte melden Sie sich mindestens einen Tag vorher telefonisch oder im Laden an.
+    </p>
   </div>
 </section>
 
-  </main>
+  <div class="green-bar"></div>
+<section id="lieferanten">
+  <h2>Lieferanten des Dorfladens Zöschingen</h2>
 
-  <footer>
-    <p>&copy; 2025 Dorfladen Zöschingen</p>
-  </footer>
+  <!-- Übersicht der Lieferanten -->
+<div class="lieferanten-uebersicht">
+  <ul>
+    <li><a href="#utz">Utz Lebensmittel Großhandel (Ochsenhausen)</a></li>
+    <li><a href="#bihr">Metzgerei Bihr (Dischingen)</a></li>
+    <li><a href="#roemer">Bäckerei Römer (Staufen/Syrgenstein)</a></li>
+    <li><a href="#flath">Bäckerei Flath (Neresheim)</a></li>
+    <li><a href="#nagel">Fruchthof Nagel (Neu-Ulm)</a></li>
+    <li><a href="#haussmann">Biohof Haußmann (Ballmertshofen)</a></li>
+    <li><a href="#felber">Härtsfelder Naturprodukte Felber</a></li>
+    <li><a href="#stolz">Getränkevertrieb Holger Stolz (Eglingen)</a></li>
+  </ul>
+</div>
+
+  <!-- Ausführliche Beschreibungen -->
+<article id="utz">
+  <h3>Utz Lebensmittel Großhandel (Ochsenhausen)</h3>
+  <img src="Utz.jpg" alt="Utz Lebensmittel Großhandel" />
+  <p>Großhandel für Trockenwaren, Konserven und Molkereiprodukte.</p>
+  <a href="https://www.utz-lebensmittel.de/" target="_blank">Zur Website</a>
+</article>
+  <hr>
+  <article id="bihr">
+    <h3>Metzgerei Hans Bihr (Dischingen)</h3>
+    <img src="Bihr.jpg" alt="Metzgerei Bihr" />
+    <p>Die Metzgerei Hans Bihr ist ein traditionsreicher Familienbetrieb in Dischingen...</p>
+    <a href="https://metzgereien.net/metzgerei-hans-bihr-partyservice-und-catering-in-dischingen/" target="_blank">Mehr erfahren</a>
+  </article>
+  <hr>
+  <article id="roemer">
+    <h3>Bäckerei Römer (Staufen/Syrgenstein)</h3>
+    <img src="Roemer.jpg" alt="Bäckerei Römer" />
+    <p>Die Bäckerei Römer ist ein echter Handwerksbetrieb mit Herz...</p>
+    <a href="https://www.11880.com/branchenbuch/syrgenstein-schwaben/071210469B27620879/thomas-roemer-baeckerei.html" target="_blank">Mehr erfahren</a>
+  </article>
+  <hr>
+  <article id="flath">
+    <h3>Bäckerei &amp; Konditorei Flath (Neresheim)</h3>
+    <img src="Flath.jpg" alt="Bäckerei Flath" />
+    <p>Die Bäckerei Flath in Neresheim ist bekannt für ihre feinen Backwaren...</p>
+    <a href="http://www.baeckerei-flath.de" target="_blank">Zur Website</a>
+  </article>
+  <hr>
+  <article id="nagel">
+    <h3>Fruchthof Nagel (Neu-Ulm)</h3>
+    <img src="Nagel.jpg" alt="Fruchthof Nagel Neu-Ulm" />
+    <p>Der Fruchthof Nagel ist ein führender Großhändler für Obst und Gemüse...</p>
+    <a href="https://www.fruchthof.de" target="_blank">Zur Website</a>
+  </article>
+
+<article id="haussmann">
+  <h3>Biohof Haußmann (Ballmertshofen)</h3>
+  <img src="Haussmann.jpg" alt="Biohof Haußmann" />
+  <p>Biologisch erzeugte Kartoffeln aus eigenem Anbau – direkt vom Hof.</p>
+  <a href="http://www.biohof-haussmann.de/kontakt.html" target="_blank">Zur Website</a>
+</article>
+<hr>
+
+<article id="felber">
+  <h3>Härtsfelder Naturprodukte Felber</h3>
+  <img src="Felber.jpg" alt="Felber Naturprodukte" />
+  <p>Regionale Eier und Nudeln aus eigener Herstellung in Dischingen-Eglingen.</p>
+  <a href="https://www.felber-ei.de/impressum.html" target="_blank">Zur Website</a>
+</article>
+<hr>
+
+<article id="stolz">
+  <h3>Getränkevertrieb Holger Stolz (Eglingen)</h3>
+  <img src="Stolz.jpg" alt="Getränkevertrieb Stolz" />
+  <p>Lieferant für alkoholfreie und alkoholische Getränke aus der Region.</p>
+  <!-- Kein Link gefunden -->
+</article>
+
+</section>
+
+
+  <div class="green-bar"></div>
+<section id="termine">
+  <h2>Termine</h2>
+  <p>Hier werden die aktuellen Termine des Dorfes angezeigt.</p>
+
+  <article class="termin">
+    <h3>ZÖSCHINGER BIERATHLON</h3>
+    <p><strong>Datum:</strong> 12. Juli 2027</p>
+    <p><strong>Ort:</strong> Gemeindehalle</p>
+    <p>Hallo Ihr Lieben, macht euch am 12.07.25 bereit für den Zöschinger Bierathlon und die legendäre Party danach.</p>
+    <img src="BierathlonA.jpg" alt="BierathlonA">
+    <img src="BierathlonB.jpg" alt="BierathlonB">
+  </article>
+<hr>
+
+  <article class="termin">
+    <h3>Conny und die Sonntagsfahrer</h3>
+    <p><strong>Datum:</strong> 20. September 2025</p>
+    <p><strong>Ort:</strong> Gemeindehalle</p>
+    <p>"Schön war die Zeit ..."<br>Tickets gibt es im Dorfladen.</p>
+    <img src="ConnyA.jpg" alt="ConnyA">
+    <img src="ConnyB.jpg" alt="ConnyB">
+  </article>
+
+</section>
+
+  <div class="green-bar"></div>
+
+<section id="historie">
+  <h2>Historie</h2>
+  <p>Einblicke in die Entwicklung des Dorfladens Zöschingen – von der Idee bis zur heutigen Bedeutung.</p>
+
+  <div class="history-gallery">
+    <div class="history-slide"><img src="Powerpoint/Dorfladen_Zoeschingen_History/Slide1.JPG" alt="Historie Slide 1"></div>
+    <div class="history-slide"><img src="Powerpoint/Dorfladen_Zoeschingen_History/Slide2.JPG" alt="Historie Slide 2"></div>
+    <div class="history-slide"><img src="Powerpoint/Dorfladen_Zoeschingen_History/Slide3.JPG" alt="Historie Slide 3"></div>
+    <div class="history-slide"><img src="Powerpoint/Dorfladen_Zoeschingen_History/Slide4.JPG" alt="Historie Slide 4"></div>
+    <div class="history-slide"><img src="Powerpoint/Dorfladen_Zoeschingen_History/Slide5.JPG" alt="Historie Slide 5"></div>
+    <div class="history-slide"><img src="Powerpoint/Dorfladen_Zoeschingen_History/Slide6.JPG" alt="Historie Slide 6"></div>
+    <div class="history-slide"><img src="Powerpoint/Dorfladen_Zoeschingen_History/Slide7.JPG" alt="Historie Slide 7"></div>
+    <div class="history-slide"><img src="Powerpoint/Dorfladen_Zoeschingen_History/Slide8.JPG" alt="Historie Slide 8"></div>
+    <div class="history-slide"><img src="Powerpoint/Dorfladen_Zoeschingen_History/Slide9.JPG" alt="Historie Slide 9"></div>
+    <div class="history-slide"><img src="Powerpoint/Dorfladen_Zoeschingen_History/Slide10.JPG" alt="Historie Slide 10"></div>
+  </div>
+</section>
+
+  <div class="green-bar"></div>
+  <section id="galerie">
+    <h2>Galerie</h2>
+    <button id="galerieButton" onclick="toggleSlideshow()">Galerie starten</button>
+
+    <div class="slideshow-container" style="display: none;">
+      <div class="mySlides fade">
+        <img src="bild3.jpg" style="width:100%">
+      </div>
+    <div class="mySlides fade"><img src="Bilder/BierathlonA.jpg" style="height:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/BierathlonB.jpg" style="height:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/Bihr.jpg" style="height:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/ConnyA.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/ConnyB.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/Felber.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/Flath.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/FruehstueckA.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/FruehstueckB.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/Geschenkkorp.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/Gutschein.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/Haussmann.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/Kontakt.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/Nagel.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/Roemer.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/Stolz.jpg" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Bilder/Utz.jpg" style="width:100%"></div>
+    </div>
+
+    <div class="dots" style="display: none; text-align:center;">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+  </section>
+
+  <br>
+  <div class="green-bar"></div>
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Adresse, Telefonnummer, Öffnungszeiten</p>
+    <img src="Kontakt.jpg" alt="Kontakt">
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Dorfladen Zöschingen</p>
+</footer>
 
 <script>
   let slideIndex = 0;
   let slideshowStarted = false;
   let slideshowInterval;
-
-  let panoramaIndex = 0;
-
-  function showPanoramaSlides() {
-    const panoramaSlides = document.getElementsByClassName("panorama-slide");
-    for (let i = 0; i < panoramaSlides.length; i++) {
-      panoramaSlides[i].style.display = "none";
-    }
-    panoramaIndex++;
-    if (panoramaIndex > panoramaSlides.length) { panoramaIndex = 1; }
-    panoramaSlides[panoramaIndex - 1].style.display = "block";
-    setTimeout(showPanoramaSlides, 5000); // 5 Sekunden
-  }
 
   function toggleSlideshow() {
     const container = document.querySelector(".slideshow-container");
@@ -121,6 +419,7 @@
       dots.style.display = "block";
       button.textContent = "Galerie beenden";
       slideshowStarted = true;
+      createDots();
       showSlides();
     } else {
       container.style.display = "none";
@@ -151,13 +450,36 @@
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 
-    slideshowInterval = setTimeout(showSlides, 2000);
+    slideshowInterval = setTimeout(showSlides, 5000);
   }
 
-  // Starte Panorama-Slideshow, wenn Seite vollständig geladen ist
+  function createDots() {
+  const slides = document.getElementsByClassName("mySlides");
+  const dotsContainer = document.querySelector(".dots");
+  dotsContainer.innerHTML = ""; // Vorherige Dots löschen
+
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dotsContainer.appendChild(dot);
+  }
+}
+
+
+  let panoramaIndex = 0;
+  function showPanoramaSlides() {
+    const panoramaSlides = document.getElementsByClassName("panorama-slide");
+    for (let i = 0; i < panoramaSlides.length; i++) {
+      panoramaSlides[i].classList.remove("active");
+    }
+    panoramaIndex++;
+    if (panoramaIndex > panoramaSlides.length) { panoramaIndex = 1; }
+    panoramaSlides[panoramaIndex - 1].classList.add("active");
+    setTimeout(showPanoramaSlides, 30000);
+  }
+
   window.addEventListener("load", showPanoramaSlides);
 </script>
-
 
 </body>
 </html>
